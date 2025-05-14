@@ -19,11 +19,4 @@ namespace OOP.Classes.Base_Classes
         public abstract void UpdateShape(Point startPoint, Point endPoint);
     }
 
-    public interface IShapeCreator
-    {
-        BaseShape StartCreating(Point startPoint);
-        void UpdateShape(Point currentPoint);
-        BaseShape FinishCreating();
-        bool IsCreating { get; }
-    }
 }

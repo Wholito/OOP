@@ -1,5 +1,6 @@
 ﻿using OOP.Classes.Base_Classes;
 using OOP.Classes.Shapes_Classes;
+using OOP.Classes.Fabric_Pattern; 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,40 +44,8 @@ namespace OOP.Classes.Fabric_Pattern
         protected abstract BaseShape CreateShape(Point startPoint);
     }
 
-    public class LineCreator : ShapeCreator
-    {
-        protected override BaseShape CreateShape(Point startPoint) => new Line(startPoint, startPoint);
-    }
 
-    public class RectangleCreator : ShapeCreator
-    {
-        protected override BaseShape CreateShape(Point startPoint) => new RectangleShape(startPoint, endPoint);
-    }
 
-    public class EllipseCreator : ShapeCreator
-    {
-        protected override BaseShape CreateShape(Point startPoint) => new Circle(startPoint, startPoint);
-    }
 
-    public class PolylineCreator : ShapeCreator
-    {
-        protected override BaseShape CreateShape(Point startPoint) => new BrokenLine(startPoint);
-    }
 
-    public class PolygonCreator : ShapeCreator
-    {
-        private int sides;
-
-        public PolygonCreator(int sides)
-        {
-            this.sides = sides;
-        }
-
-        protected override BaseShape CreateShape(Point startPoint)
-        {
-            var polygon = new Polygon(startPoint);
-            polygon.SetVerticesCount(sides);
-            return polygon;
-        }
-    }
 }

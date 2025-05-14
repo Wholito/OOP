@@ -1,3 +1,4 @@
+using OOP.Classes.FabricPattern.Creators;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -8,7 +9,7 @@ using Microsoft.VisualBasic;
 
 namespace OOP
 {
-    public partial class Form1 : Form
+    public partial class Drawer : Form
     {
         private DrawingManager drawingManager = new DrawingManager();
         private bool isDrawing = false;
@@ -16,7 +17,7 @@ namespace OOP
         private int polygonVerticesRequired = 0;
         private int polygonVerticesDrawn = 0;
 
-        public Form1()
+        public Drawer()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
@@ -209,4 +210,4 @@ namespace OOP
             ResetDrawingState();
         }
     }
-    }
+}
