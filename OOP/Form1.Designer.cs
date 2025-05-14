@@ -31,28 +31,29 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             menuStrip1 = new MenuStrip();
             файлToolStripMenuItem = new ToolStripMenuItem();
-            сохранитьToolStripMenuItem = new ToolStripMenuItem();
-            загрузитьToolStripMenuItem = new ToolStripMenuItem();
+            SaveButton = new ToolStripMenuItem();
+            LoadButton = new ToolStripMenuItem();
             правкаToolStripMenuItem = new ToolStripMenuItem();
-            отменитьToolStripMenuItem = new ToolStripMenuItem();
-            вернутьToolStripMenuItem = new ToolStripMenuItem();
-            справкаToolStripMenuItem = new ToolStripMenuItem();
-            плагиныToolStripMenuItem = new ToolStripMenuItem();
+            CanselButton = new ToolStripMenuItem();
+            Return = new ToolStripMenuItem();
+            InfoButton = new ToolStripMenuItem();
+            AddPlaginButton = new ToolStripMenuItem();
             toolStrip1 = new ToolStrip();
-            toolStripButton1 = new ToolStripButton();
-            toolStripButton2 = new ToolStripButton();
-            toolStripButton3 = new ToolStripButton();
-            toolStripButton4 = new ToolStripButton();
-            toolStripButton5 = new ToolStripButton();
-            toolStripButton6 = new ToolStripButton();
-            toolStripButton7 = new ToolStripButton();
+            LineButton = new ToolStripButton();
+            RectangleButton = new ToolStripButton();
+            CircleButton = new ToolStripButton();
+            BrokenLineButton = new ToolStripButton();
+            polygonButton = new ToolStripButton();
+            BrushThiknessButton = new ToolStripButton();
+            BrushColorButton = new ToolStripButton();
+            FillButton = new ToolStripButton();
             menuStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, правкаToolStripMenuItem, справкаToolStripMenuItem, плагиныToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, правкаToolStripMenuItem, InfoButton, AddPlaginButton });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1369, 24);
@@ -61,128 +62,148 @@
             // 
             // файлToolStripMenuItem
             // 
-            файлToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { сохранитьToolStripMenuItem, загрузитьToolStripMenuItem });
+            файлToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { SaveButton, LoadButton });
             файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             файлToolStripMenuItem.Size = new Size(48, 20);
             файлToolStripMenuItem.Text = "Файл";
             // 
-            // сохранитьToolStripMenuItem
+            // SaveButton
             // 
-            сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            сохранитьToolStripMenuItem.Size = new Size(133, 22);
-            сохранитьToolStripMenuItem.Text = "Сохранить";
+            SaveButton.Name = "SaveButton";
+            SaveButton.ShortcutKeyDisplayString = "Ctrl + S";
+            SaveButton.Size = new Size(179, 22);
+            SaveButton.Text = "Сохранить";
             // 
-            // загрузитьToolStripMenuItem
+            // LoadButton
             // 
-            загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            загрузитьToolStripMenuItem.Size = new Size(133, 22);
-            загрузитьToolStripMenuItem.Text = "Загрузить";
+            LoadButton.Name = "LoadButton";
+            LoadButton.ShortcutKeyDisplayString = "Ctrl + O";
+            LoadButton.Size = new Size(179, 22);
+            LoadButton.Text = "Загрузить";
             // 
             // правкаToolStripMenuItem
             // 
-            правкаToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { отменитьToolStripMenuItem, вернутьToolStripMenuItem });
+            правкаToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { CanselButton, Return });
             правкаToolStripMenuItem.Name = "правкаToolStripMenuItem";
             правкаToolStripMenuItem.Size = new Size(59, 20);
             правкаToolStripMenuItem.Text = "Правка";
             // 
-            // отменитьToolStripMenuItem
+            // CanselButton
             // 
-            отменитьToolStripMenuItem.Name = "отменитьToolStripMenuItem";
-            отменитьToolStripMenuItem.Size = new Size(180, 22);
-            отменитьToolStripMenuItem.Text = "Отменить";
+            CanselButton.Name = "CanselButton";
+            CanselButton.ShortcutKeyDisplayString = "Ctrl + Z";
+            CanselButton.Size = new Size(175, 22);
+            CanselButton.Text = "Отменить";
             // 
-            // вернутьToolStripMenuItem
+            // Return
             // 
-            вернутьToolStripMenuItem.Name = "вернутьToolStripMenuItem";
-            вернутьToolStripMenuItem.Size = new Size(180, 22);
-            вернутьToolStripMenuItem.Text = "Вернуть";
+            Return.Name = "Return";
+            Return.ShortcutKeyDisplayString = "Ctrl + R";
+            Return.Size = new Size(175, 22);
+            Return.Text = "Вернуть";
             // 
-            // справкаToolStripMenuItem
+            // InfoButton
             // 
-            справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            справкаToolStripMenuItem.Size = new Size(65, 20);
-            справкаToolStripMenuItem.Text = "Справка";
+            InfoButton.Name = "InfoButton";
+            InfoButton.Size = new Size(65, 20);
+            InfoButton.Text = "Справка";
+            InfoButton.Click += InfoButton_Click;
             // 
-            // плагиныToolStripMenuItem
+            // AddPlaginButton
             // 
-            плагиныToolStripMenuItem.Name = "плагиныToolStripMenuItem";
-            плагиныToolStripMenuItem.Size = new Size(113, 20);
-            плагиныToolStripMenuItem.Text = "Добавить плагин";
-            плагиныToolStripMenuItem.Click += плагиныToolStripMenuItem_Click;
+            AddPlaginButton.Name = "AddPlaginButton";
+            AddPlaginButton.Size = new Size(113, 20);
+            AddPlaginButton.Text = "Добавить плагин";
             // 
             // toolStrip1
             // 
             toolStrip1.Dock = DockStyle.Left;
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripButton3, toolStripButton4, toolStripButton5, toolStripButton6, toolStripButton7 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { LineButton, RectangleButton, CircleButton, BrokenLineButton, polygonButton, BrushThiknessButton, BrushColorButton, FillButton });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(24, 551);
+            toolStrip1.Size = new Size(32, 551);
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // LineButton
             // 
-            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(21, 20);
-            toolStripButton1.Text = "toolStripButton1";
+            LineButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            LineButton.Image = (Image)resources.GetObject("LineButton.Image");
+            LineButton.ImageTransparentColor = Color.Magenta;
+            LineButton.Name = "LineButton";
+            LineButton.Size = new Size(29, 20);
+            LineButton.Text = "toolStripButton1";
+            LineButton.Click += LineButton_Click;
             // 
-            // toolStripButton2
+            // RectangleButton
             // 
-            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
-            toolStripButton2.ImageTransparentColor = Color.Magenta;
-            toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(21, 20);
-            toolStripButton2.Text = "toolStripButton2";
-            toolStripButton2.Click += toolStripButton2_Click;
+            RectangleButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            RectangleButton.Image = (Image)resources.GetObject("RectangleButton.Image");
+            RectangleButton.ImageTransparentColor = Color.Magenta;
+            RectangleButton.Name = "RectangleButton";
+            RectangleButton.Size = new Size(29, 20);
+            RectangleButton.Text = "Rectangle";
+            RectangleButton.Click += RectangleButton_Click;
             // 
-            // toolStripButton3
+            // CircleButton
             // 
-            toolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
-            toolStripButton3.ImageTransparentColor = Color.Magenta;
-            toolStripButton3.Name = "toolStripButton3";
-            toolStripButton3.Size = new Size(21, 20);
-            toolStripButton3.Text = "toolStripButton3";
+            CircleButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            CircleButton.Image = (Image)resources.GetObject("CircleButton.Image");
+            CircleButton.ImageTransparentColor = Color.Magenta;
+            CircleButton.Name = "CircleButton";
+            CircleButton.Size = new Size(29, 20);
+            CircleButton.Text = "toolStripButton2";
+            CircleButton.Click += CircleButton_Click;
             // 
-            // toolStripButton4
+            // BrokenLineButton
             // 
-            toolStripButton4.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton4.Image = (Image)resources.GetObject("toolStripButton4.Image");
-            toolStripButton4.ImageTransparentColor = Color.Magenta;
-            toolStripButton4.Name = "toolStripButton4";
-            toolStripButton4.Size = new Size(21, 20);
-            toolStripButton4.Text = "toolStripButton4";
+            BrokenLineButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            BrokenLineButton.Image = (Image)resources.GetObject("BrokenLineButton.Image");
+            BrokenLineButton.ImageTransparentColor = Color.Magenta;
+            BrokenLineButton.Name = "BrokenLineButton";
+            BrokenLineButton.Size = new Size(29, 20);
+            BrokenLineButton.Text = "toolStripButton3";
+            BrokenLineButton.Click += BrokenLineButton_Click;
             // 
-            // toolStripButton5
+            // polygonButton
             // 
-            toolStripButton5.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton5.Image = (Image)resources.GetObject("toolStripButton5.Image");
-            toolStripButton5.ImageTransparentColor = Color.Magenta;
-            toolStripButton5.Name = "toolStripButton5";
-            toolStripButton5.Size = new Size(21, 20);
-            toolStripButton5.Text = "toolStripButton5";
+            polygonButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            polygonButton.Image = (Image)resources.GetObject("polygonButton.Image");
+            polygonButton.ImageTransparentColor = Color.Magenta;
+            polygonButton.Name = "polygonButton";
+            polygonButton.Size = new Size(29, 20);
+            polygonButton.Text = "toolStripButton4";
+            polygonButton.Click += polygonButton_Click_1;
             // 
-            // toolStripButton6
+            // BrushThiknessButton
             // 
-            toolStripButton6.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton6.Image = (Image)resources.GetObject("toolStripButton6.Image");
-            toolStripButton6.ImageTransparentColor = Color.Magenta;
-            toolStripButton6.Name = "toolStripButton6";
-            toolStripButton6.Size = new Size(21, 20);
-            toolStripButton6.Text = "toolStripButton6";
+            BrushThiknessButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            BrushThiknessButton.Image = (Image)resources.GetObject("BrushThiknessButton.Image");
+            BrushThiknessButton.ImageTransparentColor = Color.Magenta;
+            BrushThiknessButton.Name = "BrushThiknessButton";
+            BrushThiknessButton.Size = new Size(29, 20);
+            BrushThiknessButton.Text = "toolStripButton5";
+            BrushThiknessButton.Click += BrushThiknessButton_Click;
             // 
-            // toolStripButton7
+            // BrushColorButton
             // 
-            toolStripButton7.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripButton7.Image = (Image)resources.GetObject("toolStripButton7.Image");
-            toolStripButton7.ImageTransparentColor = Color.Magenta;
-            toolStripButton7.Name = "toolStripButton7";
-            toolStripButton7.Size = new Size(21, 20);
-            toolStripButton7.Text = "toolStripButton7";
+            BrushColorButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            BrushColorButton.Image = (Image)resources.GetObject("BrushColorButton.Image");
+            BrushColorButton.ImageTransparentColor = Color.Magenta;
+            BrushColorButton.Name = "BrushColorButton";
+            BrushColorButton.Size = new Size(29, 20);
+            BrushColorButton.Text = "toolStripButton6";
+            BrushColorButton.Click += BrushColorButton_Click;
+            // 
+            // FillButton
+            // 
+            FillButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            FillButton.Image = (Image)resources.GetObject("FillButton.Image");
+            FillButton.ImageTransparentColor = Color.Magenta;
+            FillButton.Name = "FillButton";
+            FillButton.Size = new Size(29, 20);
+            FillButton.Text = "toolStripButton7";
+            FillButton.Click += FillButton_Click;
             // 
             // Form1
             // 
@@ -209,20 +230,21 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem файлToolStripMenuItem;
-        private ToolStripMenuItem сохранитьToolStripMenuItem;
-        private ToolStripMenuItem загрузитьToolStripMenuItem;
+        private ToolStripMenuItem SaveButton;
+        private ToolStripMenuItem LoadButton;
         private ToolStripMenuItem правкаToolStripMenuItem;
-        private ToolStripMenuItem отменитьToolStripMenuItem;
-        private ToolStripMenuItem вернутьToolStripMenuItem;
-        private ToolStripMenuItem справкаToolStripMenuItem;
+        private ToolStripMenuItem CanselButton;
+        private ToolStripMenuItem Return;
+        private ToolStripMenuItem InfoButton;
         private ToolStrip toolStrip1;
-        private ToolStripButton toolStripButton1;
-        private ToolStripButton toolStripButton2;
-        private ToolStripButton toolStripButton3;
-        private ToolStripButton toolStripButton4;
-        private ToolStripButton toolStripButton5;
-        private ToolStripButton toolStripButton6;
-        private ToolStripButton toolStripButton7;
-        private ToolStripMenuItem плагиныToolStripMenuItem;
+        private ToolStripButton RectangleButton;
+        private ToolStripButton CircleButton;
+        private ToolStripButton BrokenLineButton;
+        private ToolStripButton polygonButton;
+        private ToolStripButton BrushThiknessButton;
+        private ToolStripButton BrushColorButton;
+        private ToolStripButton FillButton;
+        private ToolStripMenuItem AddPlaginButton;
+        private ToolStripButton LineButton;
     }
 }
