@@ -66,20 +66,23 @@
             файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             файлToolStripMenuItem.Size = new Size(48, 20);
             файлToolStripMenuItem.Text = "Файл";
+            файлToolStripMenuItem.Click += файлToolStripMenuItem_Click;
             // 
             // SaveButton
             // 
             SaveButton.Name = "SaveButton";
             SaveButton.ShortcutKeyDisplayString = "Ctrl + S";
-            SaveButton.Size = new Size(179, 22);
+            SaveButton.Size = new Size(180, 22);
             SaveButton.Text = "Сохранить";
+            SaveButton.Click += SaveButton_Click;
             // 
             // LoadButton
             // 
             LoadButton.Name = "LoadButton";
             LoadButton.ShortcutKeyDisplayString = "Ctrl + O";
-            LoadButton.Size = new Size(179, 22);
+            LoadButton.Size = new Size(180, 22);
             LoadButton.Text = "Загрузить";
+            LoadButton.Click += LoadButton_Click;
             // 
             // правкаToolStripMenuItem
             // 
@@ -94,6 +97,7 @@
             CanselButton.ShortcutKeyDisplayString = "Ctrl + Z";
             CanselButton.Size = new Size(175, 22);
             CanselButton.Text = "Отменить";
+            CanselButton.Click += CanselButton_Click;
             // 
             // Return
             // 
@@ -101,6 +105,7 @@
             Return.ShortcutKeyDisplayString = "Ctrl + R";
             Return.Size = new Size(175, 22);
             Return.Text = "Вернуть";
+            Return.Click += Return_Click;
             // 
             // InfoButton
             // 
@@ -114,6 +119,7 @@
             AddPlaginButton.Name = "AddPlaginButton";
             AddPlaginButton.Size = new Size(113, 20);
             AddPlaginButton.Text = "Добавить плагин";
+            AddPlaginButton.Click += AddPlaginButton_Click;
             // 
             // toolStrip1
             // 
@@ -121,7 +127,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { LineButton, RectangleButton, CircleButton, BrokenLineButton, polygonButton, BrushThiknessButton, BrushColorButton, FillButton });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(32, 551);
+            toolStrip1.Size = new Size(24, 551);
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -131,7 +137,7 @@
             LineButton.Image = (Image)resources.GetObject("LineButton.Image");
             LineButton.ImageTransparentColor = Color.Magenta;
             LineButton.Name = "LineButton";
-            LineButton.Size = new Size(29, 20);
+            LineButton.Size = new Size(21, 20);
             LineButton.Text = "toolStripButton1";
             LineButton.Click += LineButton_Click;
             // 
@@ -141,7 +147,7 @@
             RectangleButton.Image = (Image)resources.GetObject("RectangleButton.Image");
             RectangleButton.ImageTransparentColor = Color.Magenta;
             RectangleButton.Name = "RectangleButton";
-            RectangleButton.Size = new Size(29, 20);
+            RectangleButton.Size = new Size(21, 20);
             RectangleButton.Text = "Rectangle";
             RectangleButton.Click += RectangleButton_Click;
             // 
@@ -151,7 +157,7 @@
             CircleButton.Image = (Image)resources.GetObject("CircleButton.Image");
             CircleButton.ImageTransparentColor = Color.Magenta;
             CircleButton.Name = "CircleButton";
-            CircleButton.Size = new Size(29, 20);
+            CircleButton.Size = new Size(21, 20);
             CircleButton.Text = "toolStripButton2";
             CircleButton.Click += CircleButton_Click;
             // 
@@ -161,7 +167,7 @@
             BrokenLineButton.Image = (Image)resources.GetObject("BrokenLineButton.Image");
             BrokenLineButton.ImageTransparentColor = Color.Magenta;
             BrokenLineButton.Name = "BrokenLineButton";
-            BrokenLineButton.Size = new Size(29, 20);
+            BrokenLineButton.Size = new Size(21, 20);
             BrokenLineButton.Text = "toolStripButton3";
             BrokenLineButton.Click += BrokenLineButton_Click;
             // 
@@ -171,7 +177,7 @@
             polygonButton.Image = (Image)resources.GetObject("polygonButton.Image");
             polygonButton.ImageTransparentColor = Color.Magenta;
             polygonButton.Name = "polygonButton";
-            polygonButton.Size = new Size(29, 20);
+            polygonButton.Size = new Size(21, 20);
             polygonButton.Text = "toolStripButton4";
             polygonButton.Click += polygonButton_Click_1;
             // 
@@ -181,7 +187,7 @@
             BrushThiknessButton.Image = (Image)resources.GetObject("BrushThiknessButton.Image");
             BrushThiknessButton.ImageTransparentColor = Color.Magenta;
             BrushThiknessButton.Name = "BrushThiknessButton";
-            BrushThiknessButton.Size = new Size(29, 20);
+            BrushThiknessButton.Size = new Size(21, 20);
             BrushThiknessButton.Text = "toolStripButton5";
             BrushThiknessButton.Click += BrushThiknessButton_Click;
             // 
@@ -191,7 +197,7 @@
             BrushColorButton.Image = (Image)resources.GetObject("BrushColorButton.Image");
             BrushColorButton.ImageTransparentColor = Color.Magenta;
             BrushColorButton.Name = "BrushColorButton";
-            BrushColorButton.Size = new Size(29, 20);
+            BrushColorButton.Size = new Size(21, 20);
             BrushColorButton.Text = "toolStripButton6";
             BrushColorButton.Click += BrushColorButton_Click;
             // 
@@ -201,11 +207,11 @@
             FillButton.Image = (Image)resources.GetObject("FillButton.Image");
             FillButton.ImageTransparentColor = Color.Magenta;
             FillButton.Name = "FillButton";
-            FillButton.Size = new Size(29, 20);
+            FillButton.Size = new Size(21, 20);
             FillButton.Text = "toolStripButton7";
             FillButton.Click += FillButton_Click;
             // 
-            // Form1
+            // Drawer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -215,7 +221,7 @@
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "Drawer";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "OOP";
             menuStrip1.ResumeLayout(false);

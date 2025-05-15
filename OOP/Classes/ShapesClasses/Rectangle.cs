@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace OOP.Classes.Shapes_Classes
 {
-        internal class RectangleShape : BaseShape
-        {
+    internal class RectangleShape : BaseShape
+    {
         private Rectangle rect;
 
         public RectangleShape(Point start, Point end)

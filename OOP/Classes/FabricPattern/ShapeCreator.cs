@@ -1,6 +1,6 @@
 ﻿using OOP.Classes.Base_Classes;
 using OOP.Classes.Shapes_Classes;
-using OOP.Classes.Fabric_Pattern; 
+using OOP.Classes.Fabric_Pattern;
 using System;
 using System.Collections.Generic;
 using System.Linq;

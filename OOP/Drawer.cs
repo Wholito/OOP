@@ -21,9 +21,11 @@ namespace OOP
         {
             InitializeComponent();
             this.DoubleBuffered = true;
+            this.KeyPreview = true;
             this.MouseDown += Form1_MouseDown;
             this.MouseMove += Form1_MouseMove;
             this.MouseUp += Form1_MouseUp;
+            this.KeyDown += Drawer_KeyDown;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -65,6 +67,23 @@ namespace OOP
 
             this.Invalidate();
         }
+
+        private void Drawer_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Z)
+            {
+                drawingManager.Undo();
+                this.Invalidate();
+                e.Handled = true;
+            }
+            else if (e.Control && e.KeyCode == Keys.R)
+            {
+                drawingManager. Redo();
+                this.Invalidate();
+                e.Handled = true;
+            }
+        }
+
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -208,6 +227,43 @@ namespace OOP
             }
 
             ResetDrawingState();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void CanselButton_Click(object sender, EventArgs e)
+        {
+            drawingManager.Undo();
+            this.Invalidate();
+        }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            drawingManager.Redo();
+            this.Invalidate();
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddPlaginButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Ù‡ÈÎToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

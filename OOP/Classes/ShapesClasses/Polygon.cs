@@ -15,12 +15,12 @@ namespace OOP.Classes.Shapes_Classes
         {
             startPosition = startPoint;
             endPosition = startPoint;
-            nLines = 3; 
+            nLines = 3;
         }
 
         public void SetVerticesCount(int count)
         {
-            nLines = Math.Max(3, count); 
+            nLines = Math.Max(3, count);
         }
 
         public override void Draw(Graphics g)

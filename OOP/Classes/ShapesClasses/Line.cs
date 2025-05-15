@@ -26,10 +26,10 @@ namespace OOP.Classes.Shapes_Classes
                 g.DrawLine(pen, startPoint, endPoint);
             }
         }
-            public override void UpdateShape(Point startPoint, Point endPoint)
-    {
-        this.startPoint = startPoint;
-        this.endPoint = endPoint;
-    }
+        public override void UpdateShape(Point startPoint, Point endPoint)
+        {
+            this.startPoint = startPoint;
+            this.endPoint = endPoint;
+        }
     }
 }
